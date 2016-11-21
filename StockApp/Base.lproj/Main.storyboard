@@ -53,6 +53,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mA-iS-Kis">
                                 <rect key="frame" x="274" y="28" width="63.5" height="30"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Search">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -90,7 +91,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P/E" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0y-Qp-cPz">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Market Cap" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0y-Qp-cPz">
                                                 <rect key="frame" x="0.0" y="81" width="120" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -197,7 +198,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="PEratio" destination="OKc-bp-86h" id="kAu-5s-LXk"/>
+                        <outlet property="MKcap" destination="OKc-bp-86h" id="AXM-aD-p1E"/>
                         <outlet property="highPrice" destination="vJ7-hp-SYM" id="jvl-5T-R2l"/>
                         <outlet property="lastPrice" destination="jE6-az-LXl" id="WZ4-4V-3Mq"/>
                         <outlet property="lowPrice" destination="oHI-kN-JrZ" id="nO1-Lc-fQz"/>

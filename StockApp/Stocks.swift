@@ -18,12 +18,12 @@ class stockData {
     var highPrice: String
     var lowPrice: String
     var volume: String
-    var PEratio: String
+    var MKcap: String
     var yearHigh: String
     var yearLow: String
 
     
-    init(stockName: String, stockGainLoss: String, lastPrice: String, highPrice: String, lowPrice: String, volume: String, PEratio: String, yearHigh: String, yearLow: String) {
+    init(stockName: String, stockGainLoss: String, lastPrice: String, highPrice: String, lowPrice: String, volume: String, MKcap: String, yearHigh: String, yearLow: String) {
     
         self.stockName = stockName
         self.stockGainLoss = stockGainLoss
@@ -31,7 +31,7 @@ class stockData {
         self.highPrice = highPrice
         self.lowPrice = lowPrice
         self.volume = volume
-        self.PEratio = PEratio
+        self.MKcap = MKcap
         self.yearHigh = yearHigh
         self.yearLow = yearLow
     }

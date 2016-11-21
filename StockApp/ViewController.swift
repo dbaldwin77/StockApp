@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         @IBOutlet weak var highPrice: UILabel!
         @IBOutlet weak var lowPrice: UILabel!
         @IBOutlet weak var volume: UILabel!
-        @IBOutlet weak var PEratio: UILabel!
+        @IBOutlet weak var MKcap: UILabel!
         @IBOutlet weak var yearHigh: UILabel!
         @IBOutlet weak var yearLow: UILabel!
         @IBOutlet weak var txtfield: UITextField!
@@ -37,9 +37,12 @@ class ViewController: UIViewController {
                 print("error")
             }
             
+    
+            
         }
         override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             view.endEditing(true)
+      
         }
     
         func getStockData(urlString: String) {
@@ -66,11 +69,11 @@ class ViewController: UIViewController {
                             let highprice = parsedData["query", "results", "quote", "DaysHigh"].string
                             let lowprice = parsedData["query", "results", "quote", "DaysLow"].string
                             let volume = parsedData["query", "results", "quote", "Volume"].string
-                            let peratio = parsedData["query", "results", "quote", "PERatio"].string
+                            let mkcap = parsedData["query", "results", "quote", "MarketCapitalization"].string
                             let yearhigh = parsedData["query", "results", "quote", "YearHigh"].string
                             let yearlow = parsedData["query", "results", "quote", "YearLow"].string
  
-                            self.stocks = stockData(stockName: stockname!, stockGainLoss: stockgainloss!, lastPrice: lastprice!, highPrice: highprice!, lowPrice: lowprice!, volume: volume!, PEratio: peratio!, yearHigh: yearhigh!, yearLow: yearlow!)
+                            self.stocks = stockData(stockName: stockname!, stockGainLoss: stockgainloss!, lastPrice: lastprice!, highPrice: highprice!, lowPrice: lowprice!, volume: volume!, MKcap: mkcap!, yearHigh: yearhigh!, yearLow: yearlow!)
                            
                             self.setLabel()
                             
@@ -79,7 +82,7 @@ class ViewController: UIViewController {
                         print(response.result.error ?? "ERROR")
                     }
             }
-            
+   
         }
  
 
@@ -92,26 +95,16 @@ class ViewController: UIViewController {
                         if let quotehigh = stocks?.highPrice {
                             if let quotelow = stocks?.lowPrice {
                                 if let quotevol = stocks?.volume {
-                                    if let quoteperatio = stocks?.PEratio {
+                                    if let quotemk = stocks?.MKcap {
                                         if let quoteyearhigh = stocks?.yearHigh {
                                             if let quoteyearlow = stocks?.yearLow {
                                                 stockName.text = quotename
                                                 stockGainLoss.text = quotegainloss
-                                                if quotegainloss < "0.0" {
-                                                    stockGainLoss.backgroundColor = UIColor.red
-                                                } else if quotegainloss > "0.0" {
-                                                    stockGainLoss.backgroundColor = UIColor.green
-                                                } else {
-                                                    stockGainLoss.backgroundColor = UIColor.gray
-                                                    
-                                                }
-                                                
-
                                                 lastPrice.text = quotelast
                                                 highPrice.text = quotehigh
                                                 lowPrice.text = quotelow
                                                 volume.text = quotevol
-                                                PEratio.text = quoteperatio
+                                                MKcap.text = quotemk
                                                 yearHigh.text = quoteyearhigh
                                                 yearLow.text = quoteyearlow
                                             }
